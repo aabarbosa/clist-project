@@ -1,0 +1,120 @@
+
+/**
+	this function is wrong, it should be fixed
+*/
+function updateProgressBar(){
+	var todoSize = document.getElementById('todo').getElementsByTagName("li").length;
+	var doneSize = document.getElementById('done').getElementsByTagName("li").length;
+	//console.log(todoSize);
+	//console.log(doneSize);
+
+	var progressBarSim = doneSize/(doneSize+todoSize)*100 || 0;
+	progressBarSim = Math.trunc(progressBarSim);
+	//console.log(progressBarSim);
+
+	var a = document.querySelector(".progress");
+	var i = 0;
+
+	if(a.style.width == progressBarSim + "%") {
+	} else {
+		a.style.width = progressBarSim + "%";
+		a.innerHTML = progressBarSim + "%";
+	}
+};
+updateProgressBar();
+
+
+
+
+
+
+	// window.onclick = function(event){
+	// 		var a = document.querySelector(".progress");        
+	// 	    setInterval(function() {
+	// 	    var todoSize = 0;
+	// 	    var doneSize = 0;
+
+	// 	    if (document.getElementById('todo').getElementsByTagName("li").length) {
+	// 	    	var todoSize = document.getElementById('todo').getElementsByTagName("li").length;
+	// 	    }
+	// 	    if (document.getElementById('done').getElementsByTagName("li").length) {
+	// 	    	var doneSize = document.getElementById('done').getElementsByTagName("li").length;
+	// 	    }
+	// 	    console.log(todoSize);
+	// 	    console.log(doneSize);                    
+
+	// 	    if (todoSize != 0 && doneSize != 0) {
+	// 	    	var progressMeasure = done/(todoSize+doneSize)*100;
+	// 	    }
+		    
+	// 	    console.log(progressMeasure);
+		   
+	// 	   	if(a.innerHTML == progressMeasure) {
+	// 	    } else {
+	// 	    	a.style.width = progressMeasure;
+	// 	    	a.innerHTML = progressMeasure;
+	// 	    }
+	// },"click");
+
+
+
+// function progressBarSim(currentProgress, event) {
+// 		var bar = document.getElementById('progressBar');
+// 		var status = document.getElementById('status');
+
+// 		status.innerHTML = currentProgress+"%";
+// 		bar.value = currentProgress;
+// 		currentProgress++;
+// 		var sim = setTimeout("progressBarSim("+currentProgress+")",30);
+// 		if(currentProgress == 100){
+// 			status.innerHTML = "100%";
+// 			bar.value = 100;
+// 			clearTimeout(sim);
+// 			var finalMessage = document.getElementById('finalMessage');
+// 			finalMessage.innerHTML = "Process is complete";
+// 		}
+// 	}
+// progressBarSim(0);
+
+// document.onload = function(){
+// 	var todoSize = document.getElementById('todo').getElementsByTagName("li").length;
+// 	var doneSize = document.getElementById('done').getElementsByTagName("li").length;
+// 	console.log(todoSize);
+// 	console.log(doneSize);
+
+// 	var progressBarSim = todoSize/(doneSize+todoSize)*100 || 0;
+// 	console.log(progressBarSim);
+
+// 	var a = document.querySelector(".progress");
+// 	var i = 0;
+// 	setInterval(function() {
+// 		if(a.style.width == progressBarSim + "%") {
+// 		} else {
+// 			a.style.width = progressBarSim + "%";
+// 			a.innerHTML = progressBarSim + "%";
+// 		}
+// 	},10);
+// }
+
+
+// window.onload = function(){
+// 	var todoSize = document.getElementById('todo').getElementsByTagName("li").length;
+// 	var doneSize = document.getElementById('done').getElementsByTagName("li").length;
+// 	console.log(todoSize);
+// 	console.log(doneSize);
+// 	console.log(todoSize/(doneSize+todoSize) || 0);
+
+// 	var a = document.querySelector(".progress");
+// 	var i = 0;
+// 	setInterval(function() {
+// 		if(a.style.width =="100%") {
+// 			i = 0;
+// 			a.style.width = "0%";
+// 			a.innerHTML =  "0%";
+// 		} else {
+// 			i++;
+// 			a.style.width = i + "%";
+// 			a.innerHTML = i + "%";
+// 		}
+// 	},60);
+// }
